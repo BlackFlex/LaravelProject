@@ -11,5 +11,8 @@
         @endforeach
         {{$posts->links()}}
     @endif
+
+@if(!auth::guest())
     <a href="posts/create"><button class="btn btn-success add-post-btn">Add Post</button></a>
+@endif
 @endsection

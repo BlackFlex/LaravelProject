@@ -10,11 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages/index');
 });
-*/
+
 
 Route::get('/about','PagesController@about');
 Route::get('/services','PagesController@services');
@@ -46,3 +46,5 @@ Route::get('/users/{id}/{name}',function($id,$name){
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
+
+

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-class ProductC extends Controller
+use App\ServiceCategory;
+use DB;
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,11 @@ class ProductC extends Controller
      */
     public function index()
     {
-        //
+        //$category = ServiceCategory::all();
+        $category = ServiceCategory::orderBy('id','desc')->paginate(3);
+        //$category = DB::select('select * from service_categories');
+        return view ('/category/category')->with('category',$category);
+
     }
 
     /**
@@ -23,7 +28,7 @@ class ProductC extends Controller
      */
     public function create()
     {
-        //
+        return view ('category/catAdd');
     }
 
     /**
@@ -34,7 +39,15 @@ class ProductC extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'category_title'=>'required',
+        ]);
+        $post=new ServiceCategory;
+        $post->category_title=$request->input('category_title');
+
+        $post->save();
+
+        return redirect('/category')->with('success','Post Created');
     }
 
     /**
@@ -56,7 +69,9 @@ class ProductC extends Controller
      */
     public function edit($id)
     {
-        //
+        $ankap = ServiceCategory::find($id);
+        return view('category/catEdit')->with('ankap',$ankap);
+
     }
 
     /**
@@ -68,7 +83,15 @@ class ProductC extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'category_title'=>'required',
+        ]);
+        $post=ServiceCategory::find($id);
+        $post->category_title=$request->input('category_title');
+
+        $post->save();
+
+        return redirect('/category')->with('success','Post Created');
     }
 
     /**
@@ -79,6 +102,8 @@ class ProductC extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post=ServiceCategory::find($id);
+        $post->delete();
+        return redirect('/category')->with('success','CAtegory Deleted');
     }
 }

@@ -7,6 +7,7 @@
           <div class="col-md-4 services-box">
              <h2>{{$service->service_title}}</h2>
               <p>{{$service->service_text}}</p>
+              <p>{{$service->description}}</p>
           </div>
       @endforeach
     @endif

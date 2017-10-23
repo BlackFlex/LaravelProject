@@ -12,5 +12,10 @@ class Services extends Model
     public $primaryKey='id';
     //timestamps
 
+    public function  category()
+    {
+        return $this->belongsTo('App\ServiceCategory');
+    }
+
 
 }

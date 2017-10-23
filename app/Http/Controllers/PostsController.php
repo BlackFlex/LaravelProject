@@ -100,6 +100,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $this->validate($request, [
             'post_title'=>'required',
             'post_text'=>'required',

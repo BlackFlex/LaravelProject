@@ -14,7 +14,8 @@ class ServicesController extends Controller
      */
     public function index()
     {
-        $services=Services::orderBy('id','desc')->paginate(6);
+        $services = Services::orderBy('id','desc')->paginate(6);
+
         return view('pages/services')->with('services',$services);
     }
 

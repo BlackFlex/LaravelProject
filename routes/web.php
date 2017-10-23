@@ -24,6 +24,13 @@ Route::get('/contact','PagesController@contact');
 Route::resource('/posts','PostsController');
 
 Route::get('/services','ServicesController@index');
+
+
+Route::resource('/category','CategoryController');
+//Route::get('/catAdd','CategoryController@create');
+//Route::get('/category','CategoryController@store');
+
+
 /*
 Route::get('/posts','PostsController@index');
 Route::get('/post','PostsController@show');

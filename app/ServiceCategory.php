@@ -10,5 +10,13 @@ class ServiceCategory extends Model
     public  $table='service_categories';
     //primary key
     public $primaryKey='id';
+    //timestamps
+    public  $timestamps=true;
+
+
+    public function  service()
+    {
+        return $this->hasMany('App\Services');
+    }
 
 }

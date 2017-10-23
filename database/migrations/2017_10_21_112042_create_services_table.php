@@ -17,6 +17,7 @@ class CreateServicesTable extends Migration
             $table->increments('id');
             $table->string('service_title');
             $table->mediumText('service_text');
+            $table->string('category_title')->unique();
             $table->timestamps();
         });
     }

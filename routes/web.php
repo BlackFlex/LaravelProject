@@ -27,6 +27,12 @@ Route::get('/services','ServicesController@index');
 
 
 Route::resource('/category','CategoryController');
+
+Rout::get('/lang/{$lang?}',function ($lang=null){
+    App::setlocale($lang);
+    return view('home');
+});
+
 //Route::get('/catAdd','CategoryController@create');
 //Route::get('/category','CategoryController@store');
 

@@ -30,7 +30,7 @@ Route::resource('/category','CategoryController');
 
 Rout::get('/lang/{$lang?}',function ($lang=null){
     App::setlocale($lang);
-    return view('/home');
+    return view('home');
 });
 
 //Route::get('/catAdd','CategoryController@create');

@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section ('content')
-    <h1>WELCOME BICH</h1>
+    <h1>{{__('translations.welcome')}}</h1>
 @endsection

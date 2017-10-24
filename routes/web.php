@@ -27,11 +27,16 @@ Route::get('/services','ServicesController@index');
 
 
 Route::resource('/category','CategoryController');
+Route::get('/dashboard', 'DashboardController@index');
+Auth::routes();
+/*Route::get('/{lang?}',function ($lang=null){
+    if($lang=='en' || $lang=='ru') {
+        App::setlocale($lang);
+        return view('pages/index');
+    }
 
-Rout::get('/lang/{$lang?}',function ($lang=null){
-    App::setlocale($lang);
-    return view('home');
-});
+
+});*/
 
 //Route::get('/catAdd','CategoryController@create');
 //Route::get('/category','CategoryController@store');
@@ -49,8 +54,8 @@ Route::get('/users/{id}/{name}',function($id,$name){
 */
 
 
-Auth::routes();
 
-Route::get('/dashboard', 'DashboardController@index');
+
+
 
 

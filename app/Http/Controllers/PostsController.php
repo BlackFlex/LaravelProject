@@ -144,7 +144,11 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
+
         $post=Post::find($id);
+        if($post->post_image != 'noimage.jpg'){
+            Storage::delete($post->post_image);
+        }
         $post->delete();
 
         if($post->post_image!='noimage.jpg')

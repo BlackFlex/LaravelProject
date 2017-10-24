@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCategoryDesInService extends Migration
+class AddImage extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddCategoryDesInService extends Migration
      */
     public function up()
     {
-        Schema::table('service_categories',function ($table){
-            $table->string('description');
+        Schema::table('post',function ($table){
+            $table->string('post_image');
         });
     }
 
@@ -25,8 +25,8 @@ class AddCategoryDesInService extends Migration
      */
     public function down()
     {
-        Schema::table('service_categories',function ($table){
-            $table->dropColomn('description');
+        Schema::table('post',function ($table){
+            $table->dropColumn('post_image');
         });
     }
 }

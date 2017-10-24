@@ -8,10 +8,12 @@
                 <smal>{!! $post->created_at !!} by {{ $post->user->name }}</smal>
             </div>
         <hr>
+            @if($post->user_id==auth()->user()->id)
         <a href="/posts/{{$post->id}}/edit"><button class="btn btn-default btn-form">Edit</button></a>
         {!! Form::open(['action'=>['PostsController@destroy',$post->id],'method'=>'POST']) !!}
             {{Form::hidden('_method','DELETE')}}
             {{ Form::submit('Delete',['class'=>'btn btn-danger del-btn']) }}
         {!! Form::close() !!}
+           @endif
 
 @endsection

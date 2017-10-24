@@ -77,6 +77,7 @@ class PostsController extends Controller
     {
         $post=Post::find($id);
         return(view('posts/view')->with('post',$post));
+
     }
 
     /**

@@ -17,7 +17,7 @@ class CategoryController extends Controller
         //$category = ServiceCategory::all();
         $category = ServiceCategory::orderBy('id','desc')->paginate(3);
         //$category = DB::select('select * from service_categories');
-        return view ('/category/category')->with('category',$category);
+       return view ('/category/category')->with('category',$category);
 
     }
 

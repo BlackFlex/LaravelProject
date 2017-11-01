@@ -4,10 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class products extends Model
+class Products extends Model
 {
-    //Table
-    public  $table='post';
+    public  $table='products';
     //primary key
     public $primaryKey='id';
+    //timestamps
+    public  $timestamps=true;
+
+    public function  cat()
+    {
+        return $this->belongsTo('App\Cats','cat_id');
+
+    }
 }

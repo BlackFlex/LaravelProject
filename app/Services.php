@@ -18,5 +18,10 @@ class Services extends Model
 
     }
 
+    public function  serviceCategoryId()
+    {
+        return $this->belongsTo('App\ServiceCategory','service_category_id');
+
+    }
 
 }

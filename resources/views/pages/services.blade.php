@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section ('content')
-    <center><h1><a href="/services">Services</a></h1></center>
+    <center><h1><a href="/services"> {{__('translations.welcome')}} </a></h1></center>
     @if(count($services)>0)
       @foreach($services as $service)
           <div class="col-md-4 services-box">
